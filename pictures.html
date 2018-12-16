@@ -2,6 +2,55 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+  }
+#myDiv {
+  display: none;
+  text-align: center;
+}
 body {
   font-family: Verdana, sans-serif;
   margin: 0;
@@ -142,8 +191,9 @@ img.hover-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
-<body>
-
+<body onload="myFunction()" style="margin:0">
+<div id="loader"></div>
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <h1 style="text-align:center;color:white">A Picture is Worth a thousand words....</h2>
 
 <div class="row">
@@ -172,7 +222,7 @@ img.hover-shadow {
     <img src="goa.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
   </div>
 </div>
-
+</div>
 <div id="myModal" class="modal">
   <span class="close cursor" onclick="closeModal()">&times;</span>
   <div class="modal-content">
@@ -254,8 +304,17 @@ img.hover-shadow {
     </div>
   </div>
 </div>
-
 <script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 function openModal() {
   document.getElementById('myModal').style.display = "block";
 }
