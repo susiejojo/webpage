@@ -155,7 +155,15 @@ li a:hover {
     typing 3.5s steps(30, end),
     blinking-cursor .5s step-end infinite;
 }
-
+#loader {
+    background: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/loading-animated-gif-transparent-background-2.gif') no-repeat center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999999;
+}
 @keyframes typing {
   from { width: 0 }
   to { width: 100% }
@@ -169,8 +177,14 @@ li a:hover {
 	background-color: brown;
     color: white;
 }
+#myDiv {
+  display: none;
+  text-align: center;
+}
 </style>
-<body>
+<body onload="myFunction()" style="margin:0;">
+   <div id="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
 <nav id=navbar>
 			<ul> <a class="active">
 				<li style="background-color: black"><a href="about.html">
@@ -223,5 +237,17 @@ li a:hover {
   <div class="column middle parallax_container1" style="background-image:url(https://78.media.tumblr.com/f3d427b6d3f485ba40083f6f715c301d/tumblr_npqju3VlZC1tzv1dpo1_500.gif)">
   </div>
 </div>
+<script>
+var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+</script>
 </body>
 </html>
