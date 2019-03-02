@@ -164,7 +164,25 @@ li a:hover {
     height: 100%;
     width: 100%;
     z-index: 9999999;
+    transition:all 0.5s ease;
 }
+.preloader_inner {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 4em;
+  height: 4em;
+  line-height: 4em;
+  text-align: center;
+  font-size: 2em;
+  font-family: Times New Roman;
+  font-weight: 1000;
+  color: #333;
+}
+
 #myDiv {
   display: none;
   text-align: center;
@@ -173,7 +191,9 @@ li a:hover {
 
 </style>
 <body onload="myFunction()" style="margin:0;">
-   <div id="loader"></div>
+   <div id="loader">
+     <div class="preloader_inner">100%</div>
+   </div>
 <div style="display:none;" id="myDiv" class="animate-bottom">
 <nav id=navbar>
 			<ul> <a class="active">
@@ -230,6 +250,30 @@ li a:hover {
 function myFunction() {
   myVar = setTimeout(showPage, 3000);
 }
+loader();
+
+function loader(_success) {
+    var obj = document.querySelector('#loader'),
+    inner = document.querySelector('.preloader_inner'),
+    page = document.querySelector('#myDiv');
+    obj.classList.add('show');
+    page.classList.remove('show');
+    var w = 0,
+        t = setInterval(function() {
+            w = w + 1;
+            inner.textContent = w+'%';
+            if (w === 100){
+                obj.classList.remove('show');
+                page.classList.add('show');
+                clearInterval(t);
+                w = 0;
+                if (_success){
+                    return _success();
+                }
+            }
+        }, 20);
+}
+
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
