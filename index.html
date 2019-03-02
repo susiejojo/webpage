@@ -1,14 +1,14 @@
 <html>
+<script src="https://unpkg.com/typewriter-effect/dist/core.js"></script>
 <head>
 <link rel="icon" href="https://ya-webdesign.com/images/transparent-emotes-cat.png">
 <title>My Site</title>
 </head>
 <style>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
 <style>
-
 body {
     font-family: Lobster;
     background-color: black;
@@ -17,13 +17,6 @@ body {
   {
     font-family: Lobster;
   }
-.header {
-    background-image: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/pink-gradient_zkijpezwr__F0000.png);
-    padding: 30px;
-    font-size: 100px;
-    text-align: right;
-    width: 100%;
-}
 .column {
     float: left;
     padding: 10px;
@@ -50,6 +43,17 @@ body {
 	font-size: 50;
     padding: 3px;
     text-align: left;
+}
+#header {
+    background-image: url(https://www.fiftyflowers.com/site_files/FiftyFlowers/Image/Product/freedom-funza-closeup-500_dd731d1f.jpg);
+    padding: 30px;
+    font-size: 100px;
+    color: yellow;
+    font-weight: 800;
+    text-align: center;
+    font-family: Lobster;
+    width: 100%;
+    height:150px;
 }
 @media (max-width: 600px) {
     .column.side, .column.middle {
@@ -139,7 +143,7 @@ li
 .pic{
   position:fixed;
   width:270px;
-  height:310px;
+  height:330px;
   border-radius: 50%;
   display: inline-block;
 }
@@ -149,17 +153,9 @@ li
 li a:hover {   
     color: pink;
     }
-.typewriter {
-  font-family: Helvetica;
-  overflow: hidden;
-  border-right: .15em solid black;
-  white-space: nowrap; 
-  margin: 0 auto;
-  letter-spacing: .15em; 
-  animation: 
-    typing 3.5s steps(30, end),
-    blinking-cursor .5s step-end infinite;
-}
+.active {
+	background-color: brown;
+    color: white;}
 #loader {
     background: url('http://backgroundcheckall.com/wp-content/uploads/2017/12/loading-animated-gif-transparent-background-2.gif') no-repeat center center;
     position: absolute;
@@ -169,27 +165,16 @@ li a:hover {
     width: 100%;
     z-index: 9999999;
 }
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blinking-cursor {
-  from, to { border-color: transparent }
-  50% { border-color: orange; }
-}
-.active {
-	background-color: brown;
-    color: white;
-}
 #myDiv {
   display: none;
   text-align: center;
 }
+}
+
 </style>
 <body onload="myFunction()" style="margin:0;">
    <div id="loader"></div>
-    <div style="display:none;" id="myDiv" class="animate-bottom">
+<div style="display:none;" id="myDiv" class="animate-bottom">
 <nav id=navbar>
 			<ul> <a class="active">
 				<li style="background-color: black"><a href="about.html">
@@ -227,32 +212,47 @@ li a:hover {
 
 			</ul>
 		</nav>
-<div class="header">
-<h2 class="typewriter" id="lobster"><strong> &nbsp;&nbsp;&nbsp; Welcome to my site!!</strong></h2>
-
+<div id="header">
 </div>
 <div class="row">
 		</div>
-  <div class="column middle parallax_container1" style="background-image:url(https://i.gifer.com/Wiqd.gif)">
+  <div class="column middle parallax_container1" style="background-image:url(https://78.media.tumblr.com/f3d427b6d3f485ba40083f6f715c301d/tumblr_npqju3VlZC1tzv1dpo1_500.gif)">
 <br><br>
 <img src="WhatsApp Image 2018-09-17 at 6.27.49 PM.jpeg" class="pic">
 <br>
   </div>
 
-  <div class="column middle parallax_container1" style="background-image:url(https://78.media.tumblr.com/f3d427b6d3f485ba40083f6f715c301d/tumblr_npqju3VlZC1tzv1dpo1_500.gif)">
+  <div class="column middle parallax_container1" style="background-image:url(https://i.gifer.com/Wiqd.gif)">
   </div>
-</div>
-<script>
-var myVar;
 
+<script>
+  var myVar;
 function myFunction() {
   myVar = setTimeout(showPage, 3000);
 }
-
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
+  var app = document.getElementById('header');
+
+var typewriter = new Typewriter(app, {
+    loop: true
+});
+
+typewriter.typeString('   Hello there!')
+    .pauseFor(1000)
+    .deleteAll()
+    .typeString('   This is Dipanwita!')
+    .pauseFor(2000)
+    .deleteChars(10)
+    .typeString('Diya!')
+    .pauseFor(2000)
+    .deleteAll()
+    .typeString('Welcome to my site!')
+    .pauseFor(2500)
+    .start();
+
 </script>
 </body>
 </html>
