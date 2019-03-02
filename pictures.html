@@ -214,60 +214,68 @@ img.hover-shadow {
 
     <div class="mySlides">
       <div class="numbertext"><h2>1 / 8: Ajanta Caves<br>
-      Visited in December,2018 <br><br>
-      <a href="ajanta2.jpg" download="Ajanta.jpg"><button class="btn"><i class="fa fa-download"></i> <h3>Download</h3></button></a>
+      Visited in December,2018 <br>
+      <a href="ajanta2.jpg" download="Ajanta.jpg"><button class="btn"><i class="fa fa-download"></i> <h2>Download</h2></button></a>
+      <button id="b" onclick="myfunction()"><h2>Like!</h2></button>
     </h2></div>
       <img src="ajanta2.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext"><h2>2 / 8: Ellora Caves<br>
-      Visited in December,2018 <br><br>
-       <a href="ellora4.jpg" download="Ellora.jpg"><button class="btn"><i class="fa fa-download"></i> <h3>Download</h3></button></a> </h2>
+      Visited in December,2018 <br>
+       <a href="ellora4.jpg" download="Ellora.jpg"><button class="btn"><i class="fa fa-download"></i> <h2>Download</h2></button></a> 
+     <button id="b1" onclick="myfunction1()"><h2>Like!</h2></button></h2>
     </div>
       <img src="ellora4.jpg" style="width:100%">
     </div>
 
     <div class="mySlides">
       <div class="numbertext"><h2>3 / 8: Kailasha Temple<br>
-      Visited in December,2018 <br><br>
-      <a href="ellora3.jpg" download="Kailasha.jpg"><button class="btn"><i class="fa fa-download"></i><h3>Download</h3></button></a>
+      Visited in December,2018 <br>
+      <a href="ellora3.jpg" download="Kailasha.jpg"><button class="btn"><i class="fa fa-download"></i><h2>Download</h2></button></a>
+      <button id="b2" onclick="myfunction2()"><h2>Like!</h2></button>
     </h2></div>
       <img src="ellora3.jpg" style="width:100%">
     </div>
     
     <div class="mySlides">
       <div class="numbertext"><h2>4 / 8: Taj Mahal<br>
-      Visited in December,2014<br><br>
-      <a href="bibi1.jpg" download="Taj_Mahal.jpg"><button class="btn"><i class="fa fa-download"></i><h3>Download</h3></button></a>
+      Visited in December,2014 <br>
+      <a href="bibi1.jpg" download="Taj_Mahal.jpg"><button class="btn"><i class="fa fa-download"></i><h2>Download</h2></button></a>
+      <button id="b3" onclick="myfunction3()"><h2>Like!</h2></button>
     </h2></div>
       <img src="bibi1.jpg" style="width:100%">
     </div>
      <div class="mySlides">
       <div class="numbertext"><h2>5 / 8: Nainital<br>
-      Visited in October,2004<br><br>
-      <a href="nainital.jpg" download="Nainital.jpg"><button class="btn"><i class="fa fa-download"></i><h3>Download</h3></button></a>
+      Visited in October,2004 <br>
+      <a href="nainital.jpg" download="Nainital.jpg"><button class="btn"><i class="fa fa-download"></i><h2>Download</h2></button></a>
+      <button id="b4" onclick="myfunction4()"><h2>Like!</h2></button>
     </h2></div>
       <img src="nainital.jpg" style="width:100%">
     </div>
     <div class="mySlides">
       <div class="numbertext"><h2>6 / 8: Lotus Temple,Delhi<br>
-      Visited in June,2014<br><br>
-      <a href="delhi.jpg" download="Delhi_lotus.jpg"><button class="btn"><i class="fa fa-download"></i><h3> Download</h3></button></a>
+      Visited in June,2014 <br>
+      <a href="delhi.jpg" download="Delhi_lotus.jpg"><button class="btn"><i class="fa fa-download"></i><h2> Download</h2></button></a>
+      <button id="b5" onclick="myfunction5()"><h2>Like!</h2></button>
     </h2></div>
       <img src="delhi.jpg" style="width:100%">
     </div>
     <div class="mySlides">
       <div class="numbertext"><h2>7 / 8: Darjeeling<br>
-      Visited in October,2006<br><br>
-      <a href="darjeeling.jpg" download="Darjeeling.jpg"><button class="btn"><i class="fa fa-download"></i><h3>Download</h3></button></a>
+      Visited in October,2006 <br>
+      <a href="darjeeling.jpg" download="Darjeeling.jpg"><button class="btn"><i class="fa fa-download"></i><h2>Download</h2></button></a>
+      <button id="b6" onclick="myfunction6()"><h2>Like!</h2></button>
     </h2></div>
       <img src="darjeeling.jpg" style="width:100%">
     </div>
     <div class="mySlides">
       <div class="numbertext"><h2>8 / 8: Goa<br>
-      Visited in October,2008<br><br>
-      <a href="goa.jpg" download="Goa.jpg"><button class="btn"><i class="fa fa-download"></i> <h3>Download</h3></button></a>
+      Visited in October,2008 <br>
+      <a href="goa.jpg" download="Goa.jpg"><button class="btn"><i class="fa fa-download"></i> <h2>Download</h2></button></a>
+      <button id="b7" onclick="myfunction7()"><h2>Like!</h2></button>
     </h2></div>
       <img src="goa.jpg" style="width:100%">
     </div>
@@ -306,6 +314,46 @@ img.hover-shadow {
   </div>
 </div>
 <script>
+var count=0;
+function myfunction(){
+  count++;
+  document.getElementById("b").innerHTML="<h2>Likes: "+count + "</h2>";
+}
+var count1=0;
+function myfunction1(){
+  count1++;
+  document.getElementById("b1").innerHTML="<h2>Likes: "+count1 + "</h2>";
+}
+var count2=0;
+function myfunction2(){
+  count2++;
+  document.getElementById("b2").innerHTML="<h2>Likes: "+count2 + "</h2>";
+}
+var count3=0;
+function myfunction3(){
+  count3++;
+  document.getElementById("b3").innerHTML="<h2>Likes: "+count3 + "</h2>";
+}
+var count4=0;
+function myfunction4(){
+  count4++;
+  document.getElementById("b4").innerHTML="<h2>Likes: "+count4 + "</h2>";
+}
+var count5=0;
+function myfunction5(){
+  count5++;
+  document.getElementById("b5").innerHTML="<h2>Likes: "+count5 + "</h2>";
+}
+var count6=0;
+function myfunction6(){
+  count6++;
+  document.getElementById("b6").innerHTML="<h2>Likes: "+count6 + "</h2>";
+}
+var count7=0;
+function myfunction7(){
+  count7++;
+  document.getElementById("b7").innerHTML="<h2>Likes: "+count7 + "</h2>";
+}
 var myVar;
 
 function myFunction() {
